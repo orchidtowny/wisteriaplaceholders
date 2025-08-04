@@ -4,3 +4,4 @@ main: site.remlit.blueb.wisteriaPlaceholders.WisteriaPlaceholders
 api-version: '1.19'
 load: STARTUP
 authors: [ blueb ]
+depend: [ PlaceholderAPI ]

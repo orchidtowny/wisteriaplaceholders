@@ -17,9 +17,17 @@ class PlaceholderExpansion : PlaceholderExpansion() {
         val split = params.split("_")
         when (split.first()) {
             "tag" -> {
-                val tag = resolve(player, "%deluxetags_tag%")
+                val specific = split.getOrNull(1)
+
+                val tag = if (specific != null) resolve(player, "%deluxetags_tag_$specific%") else resolve(player, "%deluxetags_tag%")
                 if (tag.isBlank()) return ""
-                return "${resolve(player, config.getString("tag.pre"))}${tag}${resolve(player, config.getString("tag.post"))}"
+
+                var string = "${resolve(player, config.getString("tag.pre"))}${tag}${resolve(player, config.getString("tag.post"))}"
+                for (replacement in config.getStringList("tag.replace")) {
+                    val split = replacement.split(":")
+                    string = string.replace(split.getOrNull(0) ?: "", split.getOrNull(1) ?: "")
+                }
+                return string
             }
             else -> return null
         }

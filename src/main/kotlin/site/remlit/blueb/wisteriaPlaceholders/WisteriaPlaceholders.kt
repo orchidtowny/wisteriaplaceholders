@@ -13,7 +13,8 @@ class WisteriaPlaceholders : JavaPlugin() {
         }
 
         instance.config.addDefault("tag.pre", "")
-        instance.config.addDefault("tag.post", " <dark_gray>• %luckperms_meta_namecolor%")
+        instance.config.addDefault("tag.post", "")
+        instance.config.addDefault("tag.replace", emptyList<String>())
         config.options().copyDefaults(true)
         saveConfig()
     }
