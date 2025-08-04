@@ -1,0 +1,6 @@
+name: WisteriaPlaceholders
+version: '2025.8.1.0'
+main: site.remlit.blueb.wisteriaPlaceholders.WisteriaPlaceholders
+api-version: '1.19'
+load: STARTUP
+authors: [ blueb ]
