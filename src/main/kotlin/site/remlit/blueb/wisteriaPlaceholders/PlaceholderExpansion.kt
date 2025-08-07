@@ -29,6 +29,18 @@ class PlaceholderExpansion : PlaceholderExpansion() {
                 }
                 return string
             }
+            "pronouns" -> {
+                val sub = resolve(player, "%pronoun_sub%")
+                val obj = resolve(player, "%pronoun_obj%")
+                if (sub.isBlank() || obj.isBlank()) return ""
+
+                var string = "${resolve(player, config.getString("pronouns.pre"))}${sub}${resolve(player, config.getString("pronouns.div"))}${obj}${resolve(player, config.getString("pronouns.post"))}"
+                for (replacement in config.getStringList("tag.replace")) {
+                    val split = replacement.split(":")
+                    string = string.replace(split.getOrNull(0) ?: "", split.getOrNull(1) ?: "")
+                }
+                return string
+            }
             else -> return null
         }
     }

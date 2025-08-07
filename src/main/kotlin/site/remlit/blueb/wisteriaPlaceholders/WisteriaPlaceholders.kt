@@ -15,6 +15,10 @@ class WisteriaPlaceholders : JavaPlugin() {
         instance.config.addDefault("tag.pre", "")
         instance.config.addDefault("tag.post", "")
         instance.config.addDefault("tag.replace", emptyList<String>())
+        instance.config.addDefault("pronouns.pre", "&7(")
+        instance.config.addDefault("pronouns.div", "/")
+        instance.config.addDefault("pronouns.post", ")")
+        instance.config.addDefault("pronouns.replace", emptyList<String>())
         config.options().copyDefaults(true)
         saveConfig()
     }
