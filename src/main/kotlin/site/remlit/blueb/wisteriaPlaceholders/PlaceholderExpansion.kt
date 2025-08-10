@@ -41,6 +41,10 @@ class PlaceholderExpansion : PlaceholderExpansion() {
                 }
                 return string
             }
+            "rswc" -> {
+                if (player?.world?.name != "world") return resolve(player, config.getString("rswc.e"))
+                return resolve(player, config.getString("rswc.ifw"))
+            }
             else -> return null
         }
     }

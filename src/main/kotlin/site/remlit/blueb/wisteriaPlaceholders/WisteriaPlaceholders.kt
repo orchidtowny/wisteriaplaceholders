@@ -19,6 +19,8 @@ class WisteriaPlaceholders : JavaPlugin() {
         instance.config.addDefault("pronouns.div", "/")
         instance.config.addDefault("pronouns.post", ")")
         instance.config.addDefault("pronouns.replace", emptyList<String>())
+        instance.config.addDefault("rswc.ifw", "&7%rs_temperature% &8•&7 %rs_month_asname%")
+        instance.config.addDefault("rswc.e", "&7&oNo information for this world")
         config.options().copyDefaults(true)
         saveConfig()
     }
